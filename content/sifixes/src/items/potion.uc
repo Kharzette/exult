@@ -22,19 +22,6 @@
 
 extern void healByAmount 0x976 (var target, var amount);
 
-enum potions
-{
-	SLEEP_POTION = 0,
-	HEALING_POTION = 1,
-	CURING_POTION = 2,
-	POISION_POTION = 3,
-	AWAKENING_POTION = 4,
-	PROTECTION_POTION = 5,
-	LIGHT_POTION = 6,
-	INVISIBILITY_POTION = 7,
-	MANA_POTION = 8,
-	WARMTH_POTION = 9
-};
 
 void Potion shape#(0x154) ()
 {

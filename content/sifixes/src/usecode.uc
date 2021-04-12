@@ -43,6 +43,9 @@
 
 // From here down, all functions have preassigned function numbers:
 
+//craftable potions (eventually)
+#include "items/Alchemy.uc"
+
 // Fixes spelling in Draxinar's second riddle
 #include "misc/draxinar_earrings_riddle.uc"
 // Fixes the incorrect answer to Draxinar's last riddle
