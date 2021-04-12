@@ -10,8 +10,8 @@ enum reagent_frames
 	SULPHUROUS_ASH	=7
 };
 
-
-void Apparatus shape#(0x2ed) ()
+//1036 for kit
+void AlchemyKit shape#(0x40c) ()
 {
 	if(event == DOUBLECLICK)
 	{

@@ -178,12 +178,21 @@ void Game_window::restore_gamedat(
 	string id = get_game_identity(fname, Game::get_gametitle());
 	string static_identity = get_game_identity(INITGAME, Game::get_gametitle());
 	// Note: "*" means an old game.
-	if (id.empty() || (id[0] != '*' && static_identity != id)) {
-		std::string msg("Wrong identity '");
-		msg += id;
-		msg += "'.  Open anyway?";
-		if (!Yesno_gump::ask(msg.c_str())) {
-			return;
+
+	if(id.empty() || (id[0] != '*' && static_identity != id))
+	{
+		//id seems to return silverseed for a silver seed game
+		//(at least the one you buy from GOG)
+		//but sifixes gamedat puts SILVER SEED in static_identity
+		if(!(id == "silverseed" && static_identity == "SILVER SEED"))
+		{
+			//the gump stuff hasn't been loaded yet so this will always break?
+			std::string msg("Wrong identity '");
+			msg += id;
+			msg += "'.  Open anyway?";
+			if (!Yesno_gump::ask(msg.c_str())) {
+				return;
+			}
 		}
 	}
 	// Check for a ZIP file first

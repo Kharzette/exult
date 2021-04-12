@@ -185,6 +185,7 @@ int current_res = 0;
 int current_scaleval = 1;
 
 #ifdef _WIN32
+class Windnd;
 static HWND hgwin;
 static Windnd *windnd = nullptr;
 #endif
@@ -2512,9 +2513,9 @@ static void Move_grid(
 		// Repaint over old area.
 		const int pad = 8;
 		TileRect r((ptx - xtiles + 1)*c_tilesize - pad,
-		           (pty - ytiles + 1)*c_tilesize - pad,
-		           xtiles * c_tilesize + 2 * pad,
-		           ytiles * c_tilesize + 2 * pad);
+		            (pty - ytiles + 1)*c_tilesize - pad,
+		            xtiles * c_tilesize + 2 * pad,
+		            ytiles * c_tilesize + 2 * pad);
 		r = gwin->clip_to_win(r);
 		gwin->add_dirty(r);
 		gwin->paint_dirty();
@@ -2615,7 +2616,7 @@ static Game_object_shared Create_object(
  */
 
 static void Drop_dragged_shape(
-    int shape, int frame,   // What to create.
+    int shape, int frame,       // What to create.
     int x, int y            // Mouse coords. within window.
 ) {
 	if (!cheat.in_map_editor()) // Get into editing mode.

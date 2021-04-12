@@ -34,7 +34,7 @@ public:
 	AlchemyKit_object() = default;
 
 	// Add an object.
-	bool add(Game_object *obj, bool dont_check = false,
+	bool add(Game_object *pObj, bool dont_check = false,
 	         bool combine = false, bool noset = false) override;
 
 	// Under attack. -> do nothing

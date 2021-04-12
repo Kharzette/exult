@@ -148,6 +148,7 @@ GUMPS_OBJS:= \
 	gumps/ShortcutBar_gump.o \
 	gumps/ItemMenu_gump.o \
 	gumps/Jawbone_gump.o \
+	gumps/AlchemyKit_gump.o \
 	gumps/misc_buttons.o \
 	gumps/Newfile_gump.o \
 	gumps/Notebook_gump.o \
@@ -234,6 +235,7 @@ OBJS_OBJS:= \
 	objs/egg.o \
 	objs/iregobjs.o \
 	objs/jawbone.o \
+	objs/AlchemyKit.o \
 	objs/mappatch.o \
 	objs/objnames.o \
 	objs/objs.o \

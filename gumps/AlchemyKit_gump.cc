@@ -32,7 +32,17 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 AlchemyKit_gump::AlchemyKit_gump(AlchemyKit_object	*pKit,
 	int initx, int inity)        // Coords. on screen.
-	: Gump(cont, initx, inity, game->get_shape("gumps/alchemykit")),
+	: Gump(pKit, initx, inity, game->get_shape("gumps/alchemykit")),
 	mpKit(pKit) {
 	set_object_area(TileRect(0, 0, 138, 116), 10, 109);
+}
+
+
+bool AlchemyKit_gump::add(Game_object *pObj, int mx, int my, int sx, int sy,
+	bool dont_check, bool combine)
+{
+	ignore_unused_variable_warning(mx, my, sx, sy);
+
+	//AlchemyKit_object handles all the checks required
+	return	mpKit->add(pObj, dont_check, combine);
 }

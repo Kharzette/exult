@@ -47,6 +47,7 @@
 #include "virstone.h"
 #include "egg.h"
 #include "jawbone.h"
+#include "AlchemyKit.h"
 #include "actors.h" /* For Dead_body, which should be moved. */
 #include "ucsched.h"
 #include "gamewin.h"    /* With some work, could get rid of this. */
@@ -1059,6 +1060,11 @@ void Game_map::read_ireg_objects(
 			} else if (info.is_jawbone()) { // serpent jawbone
 				obj = std::make_shared<Jawbone_object>(shnum, frnum,
 				                         tilex, tiley, lift, entry[10]);
+			}
+			else if(shnum == 1036)	//alchemy kit
+			{
+				obj	=std::make_shared<AlchemyKit_object>(shnum, frnum,
+						tilex, tiley, lift, entry[10]);
 			} else
 				obj = std::make_shared<Container_game_object>(
 				    shnum, frnum, tilex, tiley, lift,

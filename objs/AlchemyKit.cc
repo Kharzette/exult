@@ -28,7 +28,7 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 const int	REAGENTS	=842;       // Shape #.
 
 
-bool	AlchemyKit::add(
+bool	AlchemyKit_object::add(
 	Game_object	*pObj,
 	bool		dont_check,	//1 to skip volume/recursion check.
 	bool		combine,	//True to try to combine obj.  MAY
@@ -37,13 +37,13 @@ bool	AlchemyKit::add(
 {
 	ignore_unused_variable_warning(noset);
 	
-	if(!Container_game_object::add(obj, dont_check, combine))
+	if(!Container_game_object::add(pObj, dont_check, combine))
 	{
 		return	false; // Can't be added to.
 	}
 
 	//only allow reagents
-	if(!IsReagent(obj))
+	if(!IsReagent(pObj))
 	{
 		return	false;
 	}
@@ -57,7 +57,7 @@ bool	AlchemyKit::add(
 }
 
 
-bool	AlchemyKit::IsReagent(const Game_object *pThing) const
+bool	AlchemyKit_object::IsReagent(const Game_object *pThing) const
 {
 	int	shapeNum	=pThing->get_shapenum();
 
